@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notices & Events - Semicoders</title>
+
+  <link rel="stylesheet" href="/css/academics.css">
+</head>
+
+<body>
+ 
+  <header>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <button class="back-btn" onclick="window.history.back()">← Back</button>
+      <a href="#" class="logo">
+        <div class="logo-icon">📘</div>
+        <span>SEMICODERS</span>
+      </a>
+    </div>
+    <nav class="header-actions">
+      <button class="icon-btn" aria-label="Notifications">🔔</button>
+      <button class="icon-btn" aria-label="User Profile">👤</button>
+    </nav>
+  </header>
+
+ 
+  <div class="container">
+    <div class="page-header">
+      <h1>📢 Notices & Events</h1>
+    </div>
+
+   
+    <div class="toggle-panel">
+      <button class="toggle-btn active" id="btnNotices" onclick="switchView('notices')">
+        📋 Notices
+      </button>
+      <button class="toggle-btn" id="btnEvents" onclick="switchView('events')">
+        🎉 Events
+      </button>
+    </div>
+
+    <div class="content-wrapper view-notices" id="contentWrapper">
+  
+      <section class="panel show" id="noticesPanel">
+        <div class="panel-header">
+          <h2>Notices</h2>
+          <button class="filter-btn" onclick="showFilterInfo('notices')">Filter ▾</button>
+        </div>
+        <div class="panel-content" id="noticesContent"></div>
+      </section>
+
+      
+      <section class="panel show" id="eventsPanel">
+        <div class="panel-header">
+          <h2>Events</h2>
+          <button class="filter-btn" onclick="showFilterInfo('events')">Filter ▾</button>
+        </div>
+        <div class="panel-content" id="eventsContent"></div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    
+    const notices = [
+      { id: 1, title: 'Semester Exam Schedule Released', text: 'Final exam timetable is live on the portal.', badge: 'Academic', date: '2 hours ago', unread: true },
+      { id: 2, title: 'Library Maintenance', text: 'Library will be closed on Dec 29–30 for maintenance.', badge: 'Urgent', date: '5 hours ago', unread: true },
+      { id: 3, title: 'Fee Payment Deadline Extended', text: 'New last date: 15 January 2026.', badge: 'Academic', date: 'Yesterday', unread: false }
+    ];
+
+    const events = [
+      { id: 101, title: 'Annual Tech Fest 2026', text: 'Workshops, hackathons and more. Register online.', badge: 'Event', date: '15 Jan 2026', unread: true },
+      { id: 102, title: 'Sports Meet', text: 'Inter‑hostel sports competitions all week.', badge: 'Event', date: '5 Jan 2026', unread: false }
+    ];
+
+    let currentView = 'notices';
+
+    function renderItems(container, items) {
+      if (!items.length) {
+        container.innerHTML = `
+          <div class="empty-state">
+            <div class="empty-icon">📭</div>
+            <div>No items yet</div>
+            <div>Check again later</div>
+          </div>`;
+        return;
+      }
+
+      container.innerHTML = items.map(item => `
+        <article class="item ${item.unread ? 'unread' : ''}" onclick="markAsRead(${item.id})">
+          <div class="item-header">
+            <h3 class="item-title">
+              ${item.unread ? '<span class="unread-indicator"></span>' : ''}
+              ${item.title}
+            </h3>
+            <div class="badges">
+              <span class="badge badge-${item.badge.toLowerCase()}">${item.badge}</span>
+            </div>
+          </div>
+          <p class="item-text">${item.text}</p>
+          <div class="item-date">${item.date}</div>
+        </article>
+      `).join('');
+    }
+
+    function switchView(view) {
+      if (view === currentView) return;
+
+      const wrapper = document.getElementById('contentWrapper');
+      const btnNotices = document.getElementById('btnNotices');
+      const btnEvents = document.getElementById('btnEvents');
+      const noticesPanel = document.getElementById('noticesPanel');
+      const eventsPanel = document.getElementById('eventsPanel');
+
+
+      btnNotices.classList.toggle('active', view === 'notices');
+      btnEvents.classList.toggle('active', view === 'events');
+
+
+      wrapper.classList.remove('view-notices', 'view-events');
+      wrapper.classList.add(view === 'notices' ? 'view-notices' : 'view-events');
+
+     
+      noticesPanel.classList.remove('slide-from-left', 'slide-from-right', 'show');
+      eventsPanel.classList.remove('slide-from-left', 'slide-from-right', 'show');
+
+      if (view === 'notices') {
+        noticesPanel.classList.add('slide-from-left');
+        eventsPanel.classList.add('slide-from-right');
+      } else {
+        eventsPanel.classList.add('slide-from-left');
+        noticesPanel.classList.add('slide-from-right');
+      }
+
+    
+      void noticesPanel.offsetWidth;
+
+      noticesPanel.classList.add('show');
+      eventsPanel.classList.add('show');
+
+      currentView = view;
+    }
+
+    function markAsRead(id) {
+      const all = [...notices, ...events];
+      const item = all.find(x => x.id === id);
+      if (!item) return;
+      item.unread = false;
+      renderItems(document.getElementById('noticesContent'), notices);
+      renderItems(document.getElementById('eventsContent'), events);
+    }
+
+    function showFilterInfo(panel) {
+      alert('Filter for ' + panel + ' will be added later.');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderItems(document.getElementById('noticesContent'), notices);
+      renderItems(document.getElementById('eventsContent'), events);
+    });
+  </script>
+</body>
+</html>
