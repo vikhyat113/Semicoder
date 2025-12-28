@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics - Semicoders</title>
+     <link rel="stylesheet" href="../css/academics.css">
+</head>
+<body>
+
+    <header>
+        <div style="display: flex; align-items: center; gap: 16px;">
+            <button class="back-btn" onclick="goBack()">← Back</button>
+            <a href="#" class="logo">
+                <div class="logo-icon">👤</div>
+                <span>SEMICODERS</span>
+            </a>
+        </div>
+        <nav class="header-actions">
+            <button class="icon-btn" aria-label="Notifications">🔔</button>
+            <button class="icon-btn" aria-label="User Profile">👤</button>
+        </nav>
+    </header>
+
+    <div class="container">
+      
+        <aside class="sidebar">
+            <div class="sidebar-title">Menu</div>
+            <div class="sidebar-item active" onclick="showSection('timetable')">
+                📅 Time Table
+            </div>
+            <div class="sidebar-item" onclick="navigateTo('attendance.html')">
+                ✅ Attendance
+            </div>
+            <div class="sidebar-item" onclick="navigateTo('tasks.html')">
+                📋 Tasks
+            </div>
+            <div class="sidebar-item" onclick="navigateTo('calendar.html')">
+                📆 Calendar
+            </div>
+            <div class="sidebar-item" onclick="navigateTo('timer.html')">
+                ⏱️ Focus Timer
+            </div>
+        </aside>
+
+        
+        <main class="main-content">
+           
+            <div class="content-header">
+                <h1>📚 ACADEMICS</h1>
+            </div>
+
+            
+            <section id="timetable" class="content-section active">
+                <table class="timetable">
+                    <thead>
+                        <tr>
+                            <th>Time / Day</th>
+                            <th>8-9am</th>
+                            <th>9-10am</th>
+                            <th>10-11am</th>
+                            <th>11-12pm</th>
+                            <th>12-1pm</th>
+                            <th>1-2pm</th>
+                            <th>2-3pm</th>
+                            <th>3-4pm</th>
+                            <th>4-5pm</th>
+                            <th>5-6pm</th>
+                            <th>6-7pm</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Monday</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Tuesday</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                             <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                             <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Thursday</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                             <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Friday</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                             <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Saturday</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                             <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Sunday</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                             <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            
+            <section id="attendance" class="content-section">
+                <div class="coming-soon">
+                    <h2>✅ Attendance</h2>
+                    <p>Coming Soon - Click sidebar to navigate or check back later</p>
+                </div>
+            </section>
+
+        
+            <section id="tasks" class="content-section">
+                <div class="coming-soon">
+                    <h2>📋 Tasks</h2>
+                    <p>Coming Soon - Click sidebar to navigate or check back later</p>
+                </div>
+            </section>
+
+          
+            <section id="calendar" class="content-section">
+                <div class="coming-soon">
+                    <h2>📆 Calendar</h2>
+                    <p>Coming Soon - Click sidebar to navigate or check back later</p>
+                </div>
+            </section>
+
+            <section id="timer" class="content-section">
+                <div class="coming-soon">
+                    <h2>⏱️ Focus Timer</h2>
+                    <p>Coming Soon - Click sidebar to navigate or check back later</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        
+        function navigateTo(page) {
+           
+            alert(`${page} will be designed and implemented later`);
+    
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
