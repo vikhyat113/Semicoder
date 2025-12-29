@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semicoders Mess Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../css/mess.css">
+</head>
+<body>
+    <header class="top-header">
+        <div class="header-left">
+            <button class="back-btn" onclick="goBack()">← Back</button>
+            <a href="#" class="branding">
+                <div class="branding-logo">👤</div>
+                <span >SEMICODERS</span>
+            </a>
+        </div>
+        <nav class="header-right">
+            <button class="icon-btn" aria-label="Notifications">🔔</button>
+            <button class="icon-btn" aria-label="User Profile">👤</button>
+        </nav>
+    </header>
+
+    <div class="main-wrapper">
+        <aside class="sidebar-menu">
+            <div class="sidebar-header">MENU</div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active">
+                    <i class="fas fa-clock"></i>
+                    <span>Time Table</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Attendance</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-tasks"></i>
+                    <span>Tasks</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-calendar"></i>
+                    <span>Calendar</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-hourglass"></i>
+                    <span>Focus Timer</span>
+                </a>
+            </nav>
+        </aside>
+
+        <div class="content-area">
+            <div class="section-header">
+                <i class="fas fa-utensils"></i>
+                <h1>Mess</h1>
+            </div>
+
+        <main class="cards-grid">
+            <article class="card">
+                <div>
+                    <i class="fas fa-list-ul card-icon"></i>
+                    <h2 class="card-title">Mess Menu</h2>
+                    <p class="card-description">View today's menu, weekly schedule, and special meals. Plan your meals easily with our comprehensive menu updates.</p>
+                </div>
+                <span class="card-badge">Updated Daily</span>
+            </article>
+
+            <article class="card">
+                <div>
+                    <i class="fas fa-bell card-icon"></i>
+                    <h2 class="card-title">Notice</h2>
+                    <p class="card-description">Stay informed with menu changes, holidays, meal adjustments, and important announcements from the mess management.</p>
+                </div>
+                <span class="card-badge">3 New</span>
+            </article>
+
+            <article class="card">
+                <div>
+                    <i class="fas fa-star card-icon"></i>
+                    <h2 class="card-title">Reviews</h2>
+                    <p class="card-description">Rate meals, read feedback from fellow students, and share your dining experience to help improve quality.</p>
+                </div>
+                <span class="card-badge">4.5⭐</span>
+            </article>
+            </main>
+        </div>
+    </div>
+   <script>
+       
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
