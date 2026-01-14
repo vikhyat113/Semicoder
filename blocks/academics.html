@@ -29,9 +29,16 @@
             <div class="sidebar-item active" onclick="showSection('timetable')">
                 📅 Time Table
             </div>
-            <div class="sidebar-item" onclick="navigateTo('attendance.html')">
+            <div class="sidebar-item" id="attendance-btn" onclick="">
                 ✅ Attendance
             </div>
+            <div class="submenu" id="attendance-submenu">
+  <div class="submenu-item">DE</div>
+  <div class="submenu-item">AP</div>
+  <div class="submenu-item">DS</div>
+  <div class="submenu-item">Maths</div>
+  <div class="submenu-item">MNG</div>
+</div>
             <div class="sidebar-item" onclick="navigateTo('tasks.html')">
                 📋 Tasks
             </div>
@@ -212,6 +219,22 @@
             alert(`${page} will be designed and implemented later`);
     
         }
+
+  const attendanceBtn = document.getElementById("attendance-btn");
+  const submenu = document.getElementById("attendance-submenu");
+
+  let open = false;
+
+  attendanceBtn.addEventListener("click", () => {
+    if (!open) {
+      submenu.style.maxHeight = submenu.scrollHeight + "px";
+      open = true;
+    } else {
+      submenu.style.maxHeight = "0";
+      open = false;
+    }
+  });
+
 
         function goBack() {
             window.history.back();
