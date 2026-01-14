@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics - Semicoders</title>
+   
+
+     <link rel="stylesheet" href="../css/academics.css">
+</head>
+<body>
+
+    <header>
+        <div style="display: flex; align-items: center; gap: 16px;">
+            <button class="back-btn" onclick="goBack()">← Back</button>
+            <a href="#" class="logo">
+                <div class="logo-icon">👤</div>
+                <span>CampSync</span>
+            </a>
+        </div>
+        <nav class="header-actions">
+            <button class="icon-btn" aria-label="Notifications">🔔</button>
+            <button class="icon-btn" aria-label="User Profile">👤</button>
+        </nav>
+    </header>
+
+    <div class="container">
+      
+        <aside class="sidebar">
+            <div class="sidebar-title">Menu</div>
+            <div class="sidebar-item active" onclick="showSection('timetable')">
+                📅 Time Table
+            </div>
+            <div class="sidebar-item" id="attendance-btn" onclick="">
+                ✅ Attendance
+            </div>
+            <div class="submenu" id="attendance-submenu">
+  <div class="submenu-item">DE</div>
+  <div class="submenu-item">AP</div>
+  <div class="submenu-item">DS</div>
+  <div class="submenu-item">Maths</div>
+  <div class="submenu-item">MNG</div>
+   
+</div>
+            <div class="sidebar-item" onclick="navigateTo('tasks.html')">
+                📋 Tasks
+            </div>
+            <div class="sidebar-item" onclick="navigateTo('calendar.html')">
+                📆 Calendar
+            </div>
+            <div class="sidebar-item" onclick="navigateTo('timer.html')">
+                ⏱️ Focus Timer
+            </div>
+        </aside>
+
+        
+        <main class="main-content">
+           
+            <div class="content-header">
+                <h1>📚 Digital Electronics</h1>
+            </div>
+<script defer src="script.js"></script> 
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB5hO9sQwm6Llsq09B8UJqSzLDACypOo8cC_soX6L10N31jLFQWcs148jspzWhTyf-vGanVHv_kBG/pubhtml"
+        width="100%" height="600" frameborder="0"></iframe>
+        
+</main>
+    </div>  
+    
+</body>
+
+ <script>
+        
+        function navigateTo(page) {
+           
+            alert(`${page} will be designed and implemented later`);
+    
+        }
+
+  const attendanceBtn = document.getElementById("attendance-btn");
+  const submenu = document.getElementById("attendance-submenu");
+
+  let open = false;
+
+  attendanceBtn.addEventListener("click", () => {
+    if (!open) {
+      submenu.style.maxHeight = submenu.scrollHeight + "px";
+      open = true;
+    } else {
+      submenu.style.maxHeight = "0";
+      open = false;
+    }
+  });
+
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
